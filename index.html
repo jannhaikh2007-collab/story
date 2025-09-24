@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Story Posters</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: url('https://images.unsplash.com/photo-1521587760476-6c12a4b040da') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 30px;
+      color: #fff;
+    }
+    h1 {
+      margin-bottom: 30px;
+      background: rgba(0,0,0,0.6);
+      padding: 10px 20px;
+      border-radius: 8px;
+    }
+    .gallery {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .poster {
+      position: relative;
+      width: 250px;
+      height: 350px;
+      cursor: pointer;
+      overflow: hidden;
+      border-radius: 15px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.7);
+      transition: transform 0.3s;
+    }
+    .poster:hover {
+      transform: scale(1.05);
+    }
+    .poster img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 15px;
+    }
+    .poster-title {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      background: rgba(0,0,0,0.7);
+      text-align: center;
+      padding: 10px;
+      font-weight: bold;
+      font-size: 18px;
+    }
+    /* Modal (popup) */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.8);
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+    .modal-content {
+      background: #fff;
+      color: #000;
+      max-width: 700px;
+      width: 90%;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.5);
+      animation: fadeIn 0.5s;
+      overflow-y: auto;
+      max-height: 80vh;
+    }
+    .close {
+      float: right;
+      font-size: 24px;
+      font-weight: bold;
+      cursor: pointer;
+      color: #333;
+    }
+    .close:hover {
+      color: red;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0; transform: scale(0.9);}
+      to {opacity: 1; transform: scale(1);}
+    }
+  </style>
+</head>
+<body>
+
+  <h1>📖 Story Poster Collection</h1>
+
+  <div class="gallery">
+    <!-- Poster 1 -->
+    <div class="poster" onclick="openModal('necklace')">
+      <img src="The Necklace by Guy de Maupassant.jfif" alt="The Necklace">
+      <div class="poster-title">The Necklace</div>
+    </div>
+    <!-- Poster 2 -->
+    <div class="poster" onclick="openModal('dangerous')">
+      <img src="C:\Users\Admin\OneDrive\Desktop\Aikh\about you\GAME\snake.com\dangerous.jpg.jfif" alt="The Most Dangerous Game">
+      <div class="poster-title">The Most Dangerous Game</div>
+    </div>
+    <!-- Poster 3 -->
+    <div class="poster" onclick="openModal('lamb')">
+      <img src="C:\Users\Admin\OneDrive\Desktop\Aikh\about you\GAME\snake.com\Roald Dahl ' Lamb to the Slaughter' illustration….jfif" alt="Lamb to the Slaughter">
+      <div class="poster-title">Lamb to the Slaughter</div>
+    </div>
+  </div>
+
+  <!-- Modal for The Necklace -->
+  <div class="modal" id="necklace">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('necklace')">&times;</span>
+      <h2>The Necklace</h2>
+      <p><strong>By Guy de Maupassant</strong></p>
+      <p>Madame Loisel was a pretty and charming woman, born for luxury, but married to a poor clerk. She longed for beauty, jewels, and gowns she could never afford.</p>
+      <p>One day, her husband secured an invitation to a grand ball. Unhappy with her simple wardrobe, she borrowed a dazzling diamond necklace from her wealthy friend, Madame Forestier.</p>
+      <p>At the ball, she was admired by all, but when she returned home, she discovered the necklace was gone. In desperation, she and her husband bought a replacement, plunging them into ten years of exhausting labor to repay the debt.</p>
+      <p>At last, worn and aged, Madame Loisel met Madame Forestier again—only to learn the necklace she had lost was fake, worth nothing.</p>
+    </div>
+  </div>
+
+  <!-- Modal for The Most Dangerous Game -->
+  <div class="modal" id="dangerous">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('dangerous')">&times;</span>
+      <h2>The Most Dangerous Game</h2>
+      <p><strong>By Richard Connell</strong></p>
+      <p>Rainsford, a famous hunter, falls off a yacht and swims to Ship-Trap Island. There he meets General Zaroff, a refined but sinister man.</p>
+      <p>Zaroff reveals his passion: hunting men. He considers them the only prey worthy of his skill. He gives Rainsford a choice—be hunted or face death.</p>
+      <p>For three terrifying days, Rainsford is pursued through the jungle. Using traps and cunning, he narrowly survives. At last, he confronts Zaroff in his mansion.</p>
+      <p>In the final duel, Rainsford defeats Zaroff and claims his bed, proving himself the ultimate survivor of the most dangerous game.</p>
+    </div>
+  </div>
+
+  <!-- Modal for Lamb to the Slaughter -->
+  <div class="modal" id="lamb">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('lamb')">&times;</span>
+      <h2>Lamb to the Slaughter</h2>
+      <p><strong>By Roald Dahl</strong></p>
+      <p>Mary Maloney, a devoted wife, learns her husband wants to leave her. In shock, she takes a frozen leg of lamb and strikes him dead.</p>
+      <p>To protect herself, she carefully hides her crime. She goes to the grocery store, acting cheerful, and then returns home to “discover” the murder.</p>
+      <p>The police investigate, unaware that the murder weapon is cooking in the oven. When they grow hungry, Mary kindly offers them the roast.</p>
+      <p>As they eat, one detective jokes that the weapon is “probably right under our noses.” Mary smiles, knowing they are literally devouring the evidence.</p>
+    </div>
+  </div>
+
+  <script>
+    function openModal(id) {
+      document.getElementById(id).style.display = 'flex';
+    }
+    function closeModal(id) {
+      document.getElementById(id).style.display = 'none';
+    }
+  </script>
+
+</body>
+</html>
